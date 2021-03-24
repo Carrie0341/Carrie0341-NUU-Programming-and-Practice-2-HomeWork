@@ -5,8 +5,8 @@ using namespace std;
 int main(int argc, char const *argv[]){
 
     //create Accounts
-    Account account1{"Jane Green", 50};
-    Account account2{"John Blue", -7};
+    Account account1{"User1", 5000};
+    Account account2{"Boss1", -100};
     cout << "account1: " << account1.getName() << " balance is $"
          << account1.getBalance();
     cout << "\naccount2: " << account2.getName() << " balance is $"
