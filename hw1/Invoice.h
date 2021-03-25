@@ -1,3 +1,10 @@
+/*
+ * Invoice.h
+ *
+ *  Created on: 2021年3月24日
+ *      Author: U0924015羅子程
+ */
+
 #include <string>
 class Invoice
 {

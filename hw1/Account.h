@@ -1,6 +1,13 @@
+/*
+ * Account.h
+ *
+ *  Created on: 2021年3月24日
+ *      Author: U0924015羅子程
+ */
+
+
 #include <string>
-class Account
-{
+class Account{
 public:
     Account(std::string accountName, int initialBalance) : name{accountName}
     {
@@ -8,16 +15,14 @@ public:
             balance = initialBalance; // assign it to data member balance
     }
 
-    void withdraw(int withdrawAmount)
-    {
+    void withdraw(int withdrawAmount){
           if ( withdrawAmount > balance )
              std::cout << "Withdrawal amount exceeded account balance."<<std::endl;
           if ( withdrawAmount <= balance )
              balance = balance - withdrawAmount;
     }
 
-    void deposit(int depositAmount)
-    {
+    void deposit(int depositAmount){
         if (depositAmount > 0)                 // if the depositAmount is valid
             balance = balance + depositAmount; // add it to the balance
     }
@@ -25,8 +30,7 @@ public:
     {
         return balance;
     }
-    void setName(std::string accountName)
-    {
+    void setName(std::string accountName){
         name = accountName;
     }
     std::string getName() const
