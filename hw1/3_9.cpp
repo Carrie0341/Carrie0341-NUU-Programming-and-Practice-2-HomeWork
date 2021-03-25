@@ -7,11 +7,12 @@ int main(int argc, char const *argv[]){
     //create Accounts
     Account account1{"User1", 5000};
     Account account2{"Boss1", -100};
+
+    //print info
     cout << "account1: " << account1.getName() << " balance is $"
          << account1.getBalance();
     cout << "\naccount2: " << account2.getName() << " balance is $"
          << account2.getBalance();
-
 
     //withdraw Account1
     cout << "\n\nEnter withdraw amount for account1: ";
