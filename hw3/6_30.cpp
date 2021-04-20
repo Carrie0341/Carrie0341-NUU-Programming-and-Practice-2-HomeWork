@@ -1,10 +1,3 @@
-/*
- * 6_30.cpp
- *
- *  Created on: 2021年4月20日
- *      Author: U0924015羅子程
- */
-
 #include <iostream>
 #include <cmath>
 using namespace std;
