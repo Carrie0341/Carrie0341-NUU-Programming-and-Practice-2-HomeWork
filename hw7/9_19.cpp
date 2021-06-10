@@ -1,9 +1,3 @@
-/*
- * 9_19.cpp
- *
- *  Created on: 2021年6月05日
- *      Author: U0924015羅子程
- */
 #include <iostream>
 #include <iomanip>
 #include <string>

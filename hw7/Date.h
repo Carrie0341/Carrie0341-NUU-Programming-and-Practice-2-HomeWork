@@ -1,5 +1,3 @@
-
-#include <iostream>
 #include <iomanip>
 #include <ostream>
 #include <sstream>
@@ -70,7 +68,8 @@ Date::Date(string mm, unsigned int dd, unsigned int yy)
         }                                                //
     }                                                    //
 
-    if (!find) create(0, dd, yy); // if not find using month=0 to create
+    if (!find)
+        create(0, dd, yy); // if not find using month=0 to create
 }
 Date::Date(const time_t t)
 {
@@ -86,21 +85,21 @@ void Date::create(unsigned int mm, unsigned int dd, unsigned int yy)
 {
     try
     {
-        if (isLeapYear(yy))
-            daysPerMonth[2] = 29;
-        year = yy;
-        month = mm;
-        day = checkDay(dd);
+        if (isLeapYear(yy))       //
+            daysPerMonth[2] = 29; //
+        year = yy;                // try to initialize properties
+        month = mm;               //
+        day = checkDay(dd);       //
         cout << "Date object constructor for date \n"
              << toString() << endl; // output Date object to show when its constructor is called
     }
     catch (const exception &e)
     {
         cerr << "!! Beacuse " << e.what() << ",use the current time to create this object. !!" << endl;
-        defaultCreate(time(0));
+        defaultCreate(time(0)); // if the initialization fails ,using system time initialize
     }
 }
-void Date::defaultCreate(const time_t t)
+void Date::defaultCreate(const time_t t) //using system time and turning to localtime to initialize
 {
     tm *a = localtime(&t);
     create(1 + a->tm_mon, a->tm_mday, 1900 + a->tm_year);
@@ -118,10 +117,10 @@ string Date::toString() const
 
 unsigned int Date::toDDD() const
 {
-    unsigned ddd{day}, index{month};
-    while (index > 0)
-        ddd += daysPerMonth[--index];
-    return ddd;
+    unsigned ddd{day}, index{month};  //
+    while (index > 0)                 // DDD/MM => DDD
+        ddd += daysPerMonth[--index]; //
+    return ddd;                       //
 }
 
 unsigned int Date::checkDay(int testDay) const
